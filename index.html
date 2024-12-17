@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surpresa para Minha Namorada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f7e9f3;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        .photo-gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .photo-gallery img {
+            width: 90%;
+            max-width: 350px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        #counter {
+            font-size: 1.5rem;
+            color: #d63f74;
+            margin: 20px 0;
+            text-align: center;
+        }
+        #custom-text {
+            margin: 20px;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        @media (min-width: 600px) {
+            #counter {
+                font-size: 2rem;
+            }
+            #custom-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ola meu amor!</h1>
+    </header>
+    <section class="photo-gallery">
+        <img src="WhatsApp Image 2024-12-17 at 14.58.13.jpeg" alt="Foto 1">
+        <img src="WhatsApp Image 2024-12-17 at 14.58.58.jpeg" alt="Foto 2">
+        <img src="WhatsApp Image 2024-12-17 at 15.00.30.jpeg" alt="Foto 3">
+    </section>
+    <section id="counter">
+        <p>Estamos juntos há:</p>
+        <span id="time-elapsed">00 anos, 00 meses, 00 dias, 00:00:00</span>
+    </section>
+    <section id="custom-text">
+        <p>Isso é só um pouco do que sou capaz de fazer para deixá-la feliz. Obrigado por tudo, meu amor. Eu te amo tanto que nem este simples site é capaz de dimensionar. Agradeço a Deus por ter colocado você em minha vida e prometo te amar e cuidar de você até os últimos dias de nossas vidas.</p>
+    </section>
+    <script>
+        // Defina a data de início do relacionamento
+        const startDate = new Date("2021-10-10T00:00:00"); // Exemplo: 17 de Dezembro de 2022
+
+        function updateCounter() {
+            const now = new Date();
+            const elapsed = new Date(now - startDate);
+            const years = elapsed.getUTCFullYear() - 1970;
+            const months = elapsed.getUTCMonth();
+            const days = elapsed.getUTCDate() - 1;
+            const hours = elapsed.getUTCHours();
+            const minutes = elapsed.getUTCMinutes();
+            const seconds = elapsed.getUTCSeconds();
+
+            document.getElementById("time-elapsed").textContent = 
+                `${years} anos, ${months} meses, ${days} dias, ${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateCounter, 1000);
+    </script>
+</body>
+</html>
